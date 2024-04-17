@@ -1,10 +1,10 @@
-
 #!/usr/bin/python3
 """
 Start Flask app with root route
 """
 
 from flask import Flask
+
 app = Flask(__name__)
 
 
@@ -32,6 +32,7 @@ def c_with_text(text):
     tokens = text.split("_")
     text = "C " + " ".join(tokens)
     return text
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
