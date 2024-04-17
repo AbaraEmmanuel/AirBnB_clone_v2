@@ -1,10 +1,10 @@
-
 #!/usr/bin/python3
 """
 Start Flask app with root route
 """
 
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
@@ -34,9 +34,7 @@ def c_with_text(text):
     return text
 
 
-@app.route("/python",
-           defaults={'text': "is cool"},
-           strict_slashes=False)
+@app.route("/python", defaults={"text": "is cool"}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python_with_text(text):
     """
@@ -76,9 +74,8 @@ def odd_or_even(n):
             d = "odd"
         else:
             d = "even"
-        return render_template("6-number_odd_or_even.html",
-                               number=n,
-                               divisibility=d)
+        return render_template("6-number_odd_or_even.html", number=n, divisibility=d)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
